@@ -19,7 +19,7 @@ const Intro = ()=>{
     backgroundColor="#3b5998"
     
   >
-    Login with Facebook
+    Login with Facebook with us
   </Icon.Button>
 
         </View>
