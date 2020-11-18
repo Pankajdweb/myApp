@@ -9,7 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 function Splash({navigation}){
     setTimeout(() => {
-        navigation.replace('Intro');
+        navigation.navigate('drawer');
         
         }, 3000);
     return (
@@ -17,13 +17,9 @@ function Splash({navigation}){
      
      <Animatable.Image  animation="slideInUp" source={require('../Src/Images/logo.png')}/>
 
-        </View>
-
-
-  
+        </View>  
     )
 }
-
 
 const styles = StyleSheet.create({
     wrapper:{

@@ -3,26 +3,23 @@ import { View, Text , StyleSheet , Button, TouchableHighlight } from  'react-nat
 
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+// import { SearchBar } from 'react-native-elements';
 
 
 
-const Intro = ()=>{
+const Intro = ({navigation})=>{
     return (
         <View style={{ display:'flex',
         justifyContent: 'center',
         alignItems:'center',
         flex:1
         }} >
-     
-     <Icon.Button
-    name="facebook"
-    backgroundColor="#3b5998"
-    
-  >
-    Login with Facebook with us
-  </Icon.Button>
 
-        </View>
+     <Button
+     title="Click me to open Navigator"
+     onPress= {()=>navigation.toggleDrawer()}
+    />
+        </View> 
 
 
   

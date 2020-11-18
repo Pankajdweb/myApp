@@ -28,37 +28,32 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Splash from './Screens/splash';
 import Intro from './Screens/Intro';
+import Bio from './Screens/Bio'
+import Privacy from './Screens/Privacy'
 
 
 const HomeStack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-const HomeStackScreen = ({navigation}) => (
-
-          <HomeStack.Navigator initialRouteName="Splash" >
-          <HomeStack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
-          <HomeStack.Screen name="Intro" component={Intro}  headerMode="on"  />
-            
-            
-          </HomeStack.Navigator>
-        
-
-
-
-
-);
+function drawer(){
+  return (
+    <Drawer.Navigator initialRouteName="Intro">
+      <Drawer.Screen name="Intro" component={Intro} />
+        <Drawer.Screen name="Bio" component={Bio} />
+        <Drawer.Screen name= "Privacy" component={Privacy}/>
+    </Drawer.Navigator>
+  )
+}
 
       function App() {
         return (
       
-
-
-
-          <NavigationContainer>
-          <Drawer.Navigator initialRouteName="Home">
-            <Drawer.Screen name="Home" component={Intro} />
-            {/* <Drawer.Screen name="Notifications" component={NotificationsScreen} /> */}
-          </Drawer.Navigator>
+          <NavigationContainer> 
+              <HomeStack.Navigator initialRouteName="Splash">
+                <HomeStack.Screen name="Splash" component={Splash} options={{headerShown: false}} />
+                <HomeStack.Screen name="drawer" component={drawer}  headerMode="off"/>
+                <HomeStack.Screen name="Bio" component={Bio}  headerMode="on"/>
+              </HomeStack.Navigator>
         </NavigationContainer>
         );
       }
